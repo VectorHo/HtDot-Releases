@@ -4,7 +4,7 @@
 
 ## 下载开发测试版
 
-[v0.1.2 开发测试版](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.2) 已公开，包含最新界面、桌面模型与 Computer 配置、MCP 入口和凭据等待时窗口响应修复。
+[v0.1.3 开发测试版](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.3) 已公开，包含最新界面、桌面连接修复与自动检查更新。启动 30 秒后检查，此后每 6 小时检查；发现新版提示，下载、安装和重启仍由用户确认。
 
 | 设备 | 安装文件 |
 | --- | --- |
@@ -32,7 +32,7 @@ OTA 管理页面后续属于独立云协同 Web 项目。目前 GitHub 直接承
 
 ## English
 
-[v0.1.2](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.2) is a **development test release** for macOS Apple Silicon, macOS Intel and Windows x64. It includes the latest UI, desktop connection settings and a fix for window responsiveness during system credential access.
+[v0.1.3](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.3) is a **development test release** for macOS Apple Silicon, macOS Intel and Windows x64. It includes the latest UI, desktop connection fixes and automatic update discovery: 30 seconds after startup and every 6 hours. Download, installation and restart still require an explicit user action.
 
 Download the matching DMG or Windows EXE from the release. macOS packages are signed and notarized. Windows installers have no Authenticode signature. Every OTA package has a version-bound Tauri updater signature. Intel Mac and Windows device acceptance remain pending; GitHub latest does not imply production readiness.
 
