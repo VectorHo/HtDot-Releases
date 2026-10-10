@@ -4,7 +4,7 @@
 
 ## 下载开发测试版
 
-[v0.1.3 开发测试版](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.3) 已公开，包含最新界面、桌面连接修复与自动检查更新。启动 30 秒后检查，此后每 6 小时检查；发现新版提示，下载、安装和重启仍由用户确认。
+[v0.1.4 开发测试版](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4) 已公开，包含启动时误报修复与历史错误提醒处理，保留已有桌面连接修复和自动检查更新。启动 30 秒后检查，此后每 6 小时检查；发现新版提示，下载、安装和重启仍由用户确认。
 
 | 设备 | 安装文件 |
 | --- | --- |
@@ -15,6 +15,10 @@
 本版本先用于开发和 OTA 验收。构建、签名、公开下载与实机验收分别记录；Intel Mac 和 Windows 实机验收尚未完成。GitHub latest 用于客户端发现更新，不表示三平台正式验收通过。
 
 macOS 安装包经过 Developer ID 签名和 Apple 公证。Windows 安装包未做 Authenticode，系统可能显示未知发布者。所有 OTA 包都有绑定版本的 Tauri updater 签名。
+
+## 历史错误提醒
+
+模型恢复后，旧失败记录仍保留原始结果。0.1.4 起，在 **动态 → 需要处理** 点击 **已查看，不再提醒** 可关闭已核对的失败或中断提醒；重启后保持。记录保留在“已结束／全部动态”，可点击“恢复提醒”。待审批、活动或结果未知的工具仍需先处理，不能直接关闭。后续对话成功不会自动确认旧任务。
 
 ## 应用内更新
 
@@ -32,9 +36,11 @@ OTA 管理页面后续属于独立云协同 Web 项目。目前 GitHub 直接承
 
 ## English
 
-[v0.1.3](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.3) is a **development test release** for macOS Apple Silicon, macOS Intel and Windows x64. It includes the latest UI, desktop connection fixes and automatic update discovery: 30 seconds after startup and every 6 hours. Download, installation and restart still require an explicit user action.
+[v0.1.4](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4) is a **development test release** for macOS Apple Silicon, macOS Intel and Windows x64. It fixes brief errors during startup and adds persistent review controls for historical failures. Automatic update discovery runs 30 seconds after startup and every 6 hours. Download, installation and restart still require an explicit user action.
 
 Download the matching DMG or Windows EXE from the release. macOS packages are signed and notarized. Windows installers have no Authenticode signature. Every OTA package has a version-bound Tauri updater signature. Intel Mac and Windows device acceptance remain pending; GitHub latest does not imply production readiness.
+
+In **Activity → Needs attention**, use **Reviewed · stop reminding** after reviewing a failed or interrupted run. The original result remains in Finished and All activity. **Restore reminder** reverses this choice. Reviews persist after restart. Pending approvals and uncertain tool results cannot be dismissed.
 
 To update an installed release, open **Settings → Model and local service → Application updates → Check for updates → Install update and restart**. Resolve active work and pending approvals first. Updates verify signatures, back up SQLite and check the installed version after restart.
 
