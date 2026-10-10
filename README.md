@@ -4,13 +4,15 @@
 
 ## 下载开发测试版
 
-[v0.1.4 开发测试版](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4) 已公开，包含启动时误报修复与历史错误提醒处理，保留已有桌面连接修复和自动检查更新。启动 30 秒后检查，此后每 6 小时检查；发现新版提示，下载、安装和重启仍由用户确认。
+[v0.1.5 Apple Silicon 开发测试版](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.5) 已公开，修复“模型设置测试成功，但对话历史加载失败”的桌面传输问题。本次只构建 M 芯片 Mac，提供签名、公证 DMG 和签名 OTA；无需重填模型密钥或清空历史。Intel Mac 和 Windows 继续下载 0.1.4。
 
-| 设备 | 安装文件 |
-| --- | --- |
-| Apple Silicon Mac | 文件名包含 `macos-arm64` 的 `.dmg` |
-| Intel Mac | 文件名包含 `macos-x64` 的 `.dmg` |
-| Windows x64 | 文件名包含 `windows-x64` 的安装 `.exe` |
+| 设备 | 版本与下载 | 安装文件 |
+| --- | --- | --- |
+| Apple Silicon Mac | [0.1.5](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.5) | 文件名包含 `macos-arm64` 的 `.dmg` |
+| Intel Mac | [0.1.4](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4) | 文件名包含 `macos-x64` 的 `.dmg` |
+| Windows x64 | [0.1.4](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4) | 文件名包含 `windows-x64` 的安装 `.exe` |
+
+当前 latest feed 只提供 Apple Silicon 的 0.1.5。旧 Intel/Windows 客户端遇到缺目标平台的 feed 可能显示检查失败，不会安装错误架构的包；原 0.1.4 下载保留。0.1.5 起客户端将缺目标解释为该平台没有更新。启动 30 秒后检查，此后每 6 小时检查；发现新版提示，下载、安装和重启仍由用户确认。
 
 本版本先用于开发和 OTA 验收。构建、签名、公开下载与实机验收分别记录；Intel Mac 和 Windows 实机验收尚未完成。GitHub latest 用于客户端发现更新，不表示三平台正式验收通过。
 
@@ -36,9 +38,11 @@ OTA 管理页面后续属于独立云协同 Web 项目。目前 GitHub 直接承
 
 ## English
 
-[v0.1.4](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4) is a **development test release** for macOS Apple Silicon, macOS Intel and Windows x64. It fixes brief errors during startup and adds persistent review controls for historical failures. Automatic update discovery runs 30 seconds after startup and every 6 hours. Download, installation and restart still require an explicit user action.
+[v0.1.5](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.5) is a **development test release for Apple Silicon Mac only**. It fixes incomplete chat-history responses in the desktop transport. A successful model connection test does not exercise that response path. This repair does not require a new API key or deletion of conversation history.
 
-Download the matching DMG or Windows EXE from the release. macOS packages are signed and notarized. Windows installers have no Authenticode signature. Every OTA package has a version-bound Tauri updater signature. Intel Mac and Windows device acceptance remain pending; GitHub latest does not imply production readiness.
+Apple Silicon users can install the signed, notarized DMG or use signed OTA. Intel Mac and Windows x64 downloads remain at [v0.1.4](https://github.com/VectorHo/HtDot-Releases/releases/tag/v0.1.4). The current latest feed contains only Apple Silicon. Older Intel/Windows clients may report a check failure because their target is absent; they will not install another architecture. Version 0.1.5 treats an absent target as no update for that platform.
+
+Automatic checks run 30 seconds after startup and every 6 hours. Download, installation and restart require an explicit user action. macOS packages are signed and notarized. Windows 0.1.4 has no Authenticode signature. Every OTA package has a version-bound Tauri updater signature. Intel Mac and Windows device acceptance remain pending; GitHub latest does not imply production readiness.
 
 In **Activity → Needs attention**, use **Reviewed · stop reminding** after reviewing a failed or interrupted run. The original result remains in Finished and All activity. **Restore reminder** reverses this choice. Reviews persist after restart. Pending approvals and uncertain tool results cannot be dismissed.
 
